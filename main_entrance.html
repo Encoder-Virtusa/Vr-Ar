@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
+    <script id="link" type="text/html">
+        <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}" event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+            proxy-event="event: click; to: #image-360; as: fade"></a-entity>
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+
+            <img id="entance" src="/assets/360 img/ENTRANCE.jpg">
+            <img id="entrance-logo" src="/assets/icon/ENTRANCE.png">
+            <img id="entrance-left" src="/assets/icon/ENTRANCE-LEFT.png">
+        </a-assets>
+        <a-entity id="camera" camera mouse-cursor look-controls>
+            <a-cursor fuse="true" color="white"></a-cursor>
+        </a-entity>
+
+        <a-sky id="image-360" src="#entance" side="back">
+            <a-entity id="main-entance" geometry="height: 6; width: 6" material="src:#entrance-logo; transparent: true; emissiveIntensity: 0" position="-22.49681 3.80911 15.89352" rotation="0 -46.8 0" scale="1 1 0.94" cursor-listener></a-entity>
+            <a-entity id="left-entance" geometry="height: 6; width: 6" material="src:#entrance-left; transparent: true; emissiveIntensity: 0" position="-26.04335 3.88945 -16.03935" rotation="0 66 0" scale="1 1 0.94" cursor-listener link="href: left_entrance.html"></a-entity>
+        </a-sky>
+    </a-scene>
+</body>
+
+
+
+</html>
