@@ -16,21 +16,23 @@
         <a-assets>
 
             <img id="entance-right" src="/assets/360 img/ENTRANCE-RIGTHT.jpg">
-            <img id="entrance-main" src="/assets/icon/ENTRANCE.png">
             <img id="right-exit" src="/assets/icon/EXIT-RIGHT.png">
-            <img id="entrance" src="/assets/icon/ENTRANCE.png">
+            
+            <img id="last" src="/assets/icon/ENTRANCE-RIGHT-LAST.png">
+            <img id="entrance" src="/assets/360 img/ENTRANCE-CENTER.jpg">
+            <img id="last" src="/assets/360 img/ENTRANCE-RIGTHT-1.jpg">
         </a-assets>
         <a-entity id="camera" camera mouse-cursor look-controls>
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#entance-right">
             
-             
-                <a-entity id="main-entance" geometry="height: 6; width: 6" material="src:#entrance; transparent: true; emissiveIntensity: 0" position="2.56244 3.6809 -25.05986" rotation="0.207410721837358 17.69408262923008 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: entrance.html"></a-entity>
+            <a-entity id="last" geometry="height: 6; width: 6" material="src:#last; transparent: true; emissiveIntensity: 0" position="-12.32658 3.25994 26.69404" rotation="-7.932590000000001 -20 -3.9934899999999995" scale="0.98 0.97 -0.001" cursor-listener="" link="href: right-center.html"></a-entity>
+            <a-entity id="right-exit" geometry="height: 6; width: 6" material="src:#right-exit; transparent: true; emissiveIntensity: 0" position="2.56244 3.6809 -25.05986" rotation="0.207410721837358 17.69408262923008 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: entrance.html"></a-entity>
+            
                   
                 
-            <a-entity id="main" geometry="height: 6; width: 6" material="src:#entrance; transparent: true; emissiveIntensity: 0" position="29.47387 4.57687 1.17468" rotation="0 81 0" scale="1 1 0.94" cursor-listener="" link="href: entrance.html"></a-entity>
-        </a-sky>
+             </a-sky>
     </a-scene>
 </body>
 
