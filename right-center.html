@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+
+            <img id="right-center" src="/assets/360 img/ENTRANCE-RIGTHT-1.jpg">
+    
+            <img id="center" src="/assets/icon/ENTRANCE-RIGHT.png">
+            
+            <img id="last" src="/assets/icon/ENTRANCE-RIGHT-LAST.png">
+            
+        </a-assets>
+        <a-entity id="camera" camera mouse-cursor look-controls>
+            <a-cursor fuse="true" color="white"></a-cursor>
+        </a-entity>
+        <a-sky id="image-360" src="#right-center">
+            <a-entity id="center" geometry="height: 6; width: 6" material="src:#center; transparent: true; emissiveIntensity: 0" position="-38.59301 7.87984 70.63113" rotation="0.207410721837358 -51.82 -0.02349126960036375" scale="1 1 0.94" cursor-listener=""></a-entity> 
+            <a-entity id="last" geometry="height: 6; width: 6" material="src:#last; transparent: true; emissiveIntensity: 0" position="13.84898 2.32813 -18.24556" rotation="0.207410721837358 -29.999999999999996 -0.02349126960036375" scale="1 1 0.94" cursor-listener="" link="href: right_entrance.html"></a-entity>
+        </a-sky>
+    </a-scene>
+</body>
+
+</html>
