@@ -16,7 +16,7 @@
         <a-assets>
 
             <img id="entrance-center" src="/assets/360 img/ENTRANCE-CENTER.jpg">
-            <img id="entrance-in" src="/assets/icon/ENTRANCE-IN.png">
+            <img id="entrance-in" src="/assets/icon/ENTRANCE-MAIN.png">
             <img id="left-exit" src="/assets/icon/ENTRANCE-LEFT.png">
             <img id="entrance-out" src="/assets/icon/ENTERANCE-OUT-1.png">
             <img id="entrance-1" src="/assets/360 img/ENTRANCE-1.png">
@@ -26,10 +26,15 @@
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#entrance-center">
-            <a-entity id="main-entance" geometry="height: 6; width: 6" material="src:#entrance-in; transparent: true; emissiveIntensity: 0" position="-22.56684 4.37306 15.65157" rotation="0.207410721837358 -44.41592000000001 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" ></a-entity>
-            <a-entity id="left-exit" geometry="height: 6; width: 6" material="src:#left-exit; transparent: true; emissiveIntensity: 0" position="6.19733 5.38081 -35.39186" rotation="0.207410721837358 -44.41592000000001 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: left_entrance.html"></a-entity>
+            <a-text font="aileronsemibold" value="Entrance-In" width="6" position="-6.86838 2.47607 4.70854" scale="-2.46 2.99 -17.94" rotation="-7.02 -230.38000000000002 -0.7500000000000001" text="width: 5; align: center; color: #ffffff; side: back; negate: false; wrapCount: 38.85" visible=""></a-text>
+            
+            <a-text font="aileronsemibold" value="Entrance-Exit" width="6" position="6.84427 2.11433 -2.4453" scale="2 2.99 -17.94" rotation="-7.02 -247.16 -0.7500000000000001" text="width: 5; align: center; color: #ffffff; negate: false; wrapCount: 38.85" visible=""></a-text>
+            <a-text font="aileronsemibold" value="Left-Entrance-Exit" width="6" position="1.21249 1.99429 -8.65395" scale="1.9 1.83 -64.08" rotation="-3.6500000000000004 -196.68 1.24" text="width: 5; align: center; color: #ffffff; negate: false; wrapCount: 38.85" visible=""></a-text>
 
-            <a-entity id="entrance-out" geometry="height: 6; width: 6" material="src:#entrance-out; transparent: true; emissiveIntensity: 0" position="9.92972 2.51209 -2.44695" rotation="0.01741 -53.71592 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: entrance-2.html"></a-entity>
+            <a-entity id="entrance-in" geometry="height: 6; width: 6" material="src:#entrance-in; transparent: true; emissiveIntensity: 0" position="-22.74298 3.73781 15.08288" rotation="0.207410721837358 -44.20592 -1.58349" scale="1 1 -0.001" cursor-listener="" link="href: reception.html"></a-entity>
+            <a-entity id="left-exit" geometry="height: 6; width: 6" material="src:#left-exit; transparent: true; emissiveIntensity: 0" position="6.19733 5.38081 -35.39186" rotation="0.207410721837358 -44.41592000000001 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: left_entrance.html"></a-entity>
+           
+            <a-entity id="entrance-out" geometry="height: 6; width: 6" material="src: #entrance-out; transparent: true; emissiveIntensity: 0" position="31.98042 4.64233 -10.59072" rotation="0.01741 -53.71592 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: entrance-2.html"></a-entity>
            </a-sky>
     </a-scene>
 </body>
