@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+:root {
+    --primary: #F9A826;
+    --secondary: #6B6B6B;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, var(--secondary) 0%, var(--primary) 100%);
+}
+
+body {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-box {
+    min-width: 800px;
+    max-width: 1000px;
+    max-height: 800px;
+    height: 95vh;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.audio-btn {
+    height: 40px;
+    display: flex;
+    justify-content: right;
+}
+
+.audio-btn button {
+    margin: 5px;
+    height: 40px;
+    width: 13%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    border-color: white;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.audio-btn button:hover {
+    border: 2px solid var(--primary);
+    transition: none;
+    cursor: pointer;
+}
+
+.audio-btn button:active {
+    background-color: var(--primary);
+    transition: none;
+    color: white;
+    cursor: pointer;
+}
+
+.message-input {
+    position: relative;
+}
+
+.last-end {
+    justify-content: end;
+}
+
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black;
+}
+
+.main-grid-container {
+    display: grid;
+    grid-template-columns: 60% 20%;
+}
+
+video {
+    border-radius: 25%;
+    background-color: black;
+}
