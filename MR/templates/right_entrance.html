@@ -7,32 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="../templates/css/main.css">
+    <script src="../templates/js/main.js"></script>
 </head>
 
 <body>
     <a-scene>
-        <a-assets>
+        <a-../templates/assets>
 
-            <img id="entance-right" src="/assets/360 img/ENTRANCE-RIGTHT.jpg">
-            <img id="right-exit" src="/assets/icon/ENTERANCE-OUT-IN.png">
-            <img id="right" src="/assets/icon/ENTERANCE-IN-OUT.png">
-            
-            <img id="last" src="/assets/icon/ENTRANCE-RIGHT.png">
-            <img id="entrance" src="/assets/360 img/ENTRANCE-CENTER.jpg">
-            <img id="last" src="/assets/360 img/ENTRANCE-RIGTHT-1.jpg">
-        </a-assets>
+            <img id="entance-right" src="../templates/../templates/assets/360 img/ENTRANCE-RIGTHT.jpg">
+                 <img id="arrow" src="../templates/assets/icon/arrow.png">
+            <img id="arrow-1" src="../templates/assets/icon/arrow.png">
+            <img id="last" src="../templates/assets/icon/ENTRANCE-RIGHT.png">
+            <img id="entrance" src="../templates/assets/360 img/ENTRANCE-CENTER.jpg">
+            <img id="last" src="../templates/assets/360 img/ENTRANCE-RIGTHT-1.jpg">
+        </a-../templates/assets>
         <a-entity id="camera" camera mouse-cursor look-controls>
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#entance-right">
             
             <a-entity id="last" geometry="height: 6; width: 6" material="src:#last; transparent: true; emissiveIntensity: 0" position="-12.32658 3.25994 26.69404" rotation="-7.932590000000001 -20 -3.9934899999999995" scale="0.98 0.97 -0.001" cursor-listener="" link="href: right-center.html"></a-entity>
-            <a-entity id="right" geometry="height: 6; width: 6" material="src: #right; transparent: true; emissiveIntensity: 0" position="8.94432 0.1997 -13.81709" rotation="-7.932590000000001 -19.93 -3.9934899999999995" scale="0.98 0.97 -0.141" cursor-listener="" link="href: entrance-2.html"></a-entity>
-
-            <a-entity id="right-exit" geometry="height: 6; width: 6" material="src:#right-exit; transparent: true; emissiveIntensity: 0" position="-5.45051 -0.6073 -14.55793" rotation="0.207410721837358 17.69408262923008 -0.02349126960036375" scale="1 1 -0.001" cursor-listener="" link="href: entrance.html"></a-entity>
             
+            <a-entity id="arrow" geometry="height: 6; width: 6" material="src:#arrow; transparent: true; emissiveIntensity: 0" position="8.62627 -0.14268 -15.97078" rotation="-27.37259 -201.29 -6.96349" scale="-0.65 0.87 -0.141" cursor-listener="" link="href: entrance-2.html" visible=""></a-entity>
+        
+            <a-entity id="arrow-1" geometry="height: 6; width: 10" material="src:#arrow-1; transparent: true; emissiveIntensity: 0" position="-3.59748 -0.35585 -18.39954" rotation="1.29741 -49.20592 -0.02349126960036375" scale="1 0.34 -0.021" cursor-listener="" link="href: entrance.html"></a-entity>
                   
                 
              </a-sky>

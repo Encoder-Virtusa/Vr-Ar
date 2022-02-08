@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="../templates/css/main.css">
+    <script src="../templates/js/main.js"></script>
     <script id="link" type="text/html">
         <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}" event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
             proxy-event="event: click; to: #image-360; as: fade"></a-entity>
@@ -19,10 +19,10 @@
     <a-scene>
         <a-assets>
 
-            <img id="entance" src="/assets/360 img/ENTRANCE.jpg">
-            <img id="entrance-logo" src="/assets/icon/ENTRANCE.png">
-            <img id="entrance-left" src="/assets/icon/ENTRANCE-LEFT.png">
-            <img id="entrance-way-1" src="/assets/icon/ENTRANCE-RIGHT-WAY-1.png"
+            <img id="entance" src="../templates/assets/360 img/ENTRANCE.jpg">
+            <img id="entrance-logo" src="../templates/assets/icon/ENTRANCE.png">
+            <img id="entrance-left" src="../templates/assets/icon/ENTRANCE-LEFT.png">
+            <img id="entrance-way-1" src="../templates/assets/icon/ENTRANCE-RIGHT-WAY-1.png"
             
 
             <img id="entrance-1" src="/assets/360 img/ENTRANCE-1.jpg">
