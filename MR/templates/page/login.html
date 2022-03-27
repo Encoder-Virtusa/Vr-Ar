@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.1.1-web/css/all.css'%}">
+    <script src="{% static 'js/home.js'%}"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="head">
+            <span> User Detials</span> <br> For Better Experience
+        </div>
+    </nav>
+    <form action="/about/" method="post">
+        {% csrf_token %}
+        <div class="middle">
+            <div class="left">
+                <div class="form">
+                    <div class="leading">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="userName" placeholder="Name">
+                    </div>
+                    <div class="leading">
+                        <i class="fa-solid fa-mobile-button"></i>
+
+                        <input type="number" name="phoneNumber" placeholder="Mobile Number">
+                    </div>
+                    <div class="leading">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="emailId" placeholder="Email">
+                    </div>
+                    <div class="leading">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        <input type="text" name="gender" placeholder="Gender">
+                    </div>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="bottom">
+            <a href="/about/">
+                <div class="content">
+                    Enter VR
+                    <i class="fa-solid fa-vr-cardboard" style="padding-left: 10%;"></i>
+                </div>
+
+            </a>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -4,8 +4,9 @@ from django.http import HttpResponse
 
 
 def login(request):
+   
     context={}
-    return render(request, 'chat/login.html', context)
+    return render(request, 'page/login.html', context)
 
 def home(request):
     context = {}
@@ -16,5 +17,11 @@ def tour(request):
     return render(request, 'page/tour.html', context)
 
 def about(request):
+    print(request.POST)
     context = {}
     return render(request, 'page/about.html', context)
+
+def chat(request):
+   
+    context = {}
+    return render(request, 'chat/chat.html', context)

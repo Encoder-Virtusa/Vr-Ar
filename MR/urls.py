@@ -3,8 +3,9 @@ from .views import *
 
 urlpatterns =[
     path('login',login,name='login'),
-    path('home',home,name='home'),
+    path('',home,name='home'),
+    path('chat',chat, name='chat'),
     path('tour',tour,name='tour'),
-    path('about',about,name='about'),
+    path('about/',about,name='about'),
 
 ]
