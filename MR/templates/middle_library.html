@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="../templates/css/main.css">
+    <script src="../templates/js/main.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+
+            <img id="middle" src="../templates/assets/360 img/middle_library.jpg">
+    
+           
+             
+        </a-assets>
+        <a-entity id="camera" camera mouse-cursor look-controls>
+            <a-cursor fuse="true" color="white"></a-cursor>
+        </a-entity>
+        <a-sky id="image-360" src="#middle">
+          </a-sky>
+    </a-scene>
+</body>
+
+</html>
