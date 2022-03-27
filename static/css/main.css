@@ -15,11 +15,6 @@
     transition: all .2s linear;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 html {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, var(--secondary) 0%, var(--primary) 100%);
