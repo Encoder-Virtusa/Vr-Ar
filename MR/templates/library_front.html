@@ -15,16 +15,16 @@
     <a-scene>
         <a-assets>
 
-            <img id="entance-left" src="../templates/assets/360 img/MAIN-CENTER.jpg">
-            <img id="exit" src="../templates/assets/icon/RECEPTION-OUT.png">
+            <img id="front" src="../templates/assets/360 img/library_front.jpg">
     
-          </a-assets>
+           
+             
+        </a-assets>
         <a-entity id="camera" camera mouse-cursor look-controls>
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
-        <a-sky id="image-360" src="#entance-left">
-            <a-entity id="exit" geometry="height: 6; width: 6" material="src: #exit; transparent: true; emissiveIntensity: 0" position="13.0114 2.58805 -4.27078" rotation="-15.993 -250.00000000000003 180.6" scale="0.72 -0.86 -0.17" cursor-listener="" background="" link="href: reception.html"></a-entity>
-             </a-sky>
+        <a-sky id="image-360" src="#front">
+          </a-sky>
     </a-scene>
 </body>
 
