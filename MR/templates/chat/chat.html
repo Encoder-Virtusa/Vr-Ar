@@ -16,7 +16,10 @@
 
         <input type="text" id="username-input"><button id="login">Login</button>
         <div class="audio-btn">
-            <button value='off' id="audio" type="button">Audio Off</button>
+            <button value='off' id="audio" type="button">Audio On</button>
+        </div>
+        <div class="audio-btn">
+            <button value='off' id="video" type="button">Video On</button>
         </div>
         <div id="chat">
             <div id="messages">
@@ -30,8 +33,12 @@
             <button id="send-message">Send Message</button>
         </div>
     </div>
-    <div id="audio-container">
-        <audio id="local-audio" autoplay></audio>
+    <div id="container">
+        <div>
+            <video id="localVideo" autoplay muted playsinline></video>
+        </div>
+
+
     </div>
     <script rel="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>

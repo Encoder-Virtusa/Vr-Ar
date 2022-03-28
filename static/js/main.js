@@ -2,6 +2,7 @@ var mapPeer = {};
 var username_input = document.querySelector('#username-input');
 var btn_join = document.querySelector('#login');
 var audio_btn = document.querySelector('#audio');
+var video_btn = document.querySelector('#video');
 var userName;
 var webSocket;
 var offer
@@ -86,36 +87,68 @@ btn_join.addEventListener('click', () => {
 
 var localStream = new MediaStream();
 
-var localAudio = document.querySelector("#local-audio");
+var localVideo = document.querySelector("#localVideo");
+
 const constraints = {
     'audio': true,
+    'video': true
 
 }
 var userMedia = navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+
+    try {
+        localVideo.srcObject = stream;
+    } catch (error) {
+        localVideo.src = window.URL.createObjectURL(stream);
+    }
+    console.log(stream);
     localStream = stream;
-    localAudio.srcObject = localStream;
+
     var audioTracks = stream.getAudioTracks();
-    audioTracks[0].enabled = false;
+    var videoTracks = stream.getVideoTracks();
+    videoTracks[0].enabled = true;
+    videoTracks[0].enabled = true;
+
     audio_btn.addEventListener('click', function(event) {
 
 
-        if (event.target.value == 'off') {
+        if (audioTracks[0].enabled) {
+            audioTracks[0].enabled = false;
+            document.getElementById('audio').style.backgroundColor = 'white';
+            document.getElementById('audio').style.color = 'black';
+            audio_btn.innerHTML = "Audio Off";
+            audio_btn.value = 'off';
+        } else {
             audioTracks[0].enabled = true;
             document.getElementById('audio').style.backgroundColor = '#F9A826';
             document.getElementById('audio').style.color = 'white';
             audio_btn.innerHTML = "Audio On";
             audio_btn.value = 'on';
-            return;
         }
-        audioTracks[0].enabled = false;
-        document.getElementById('audio').style.backgroundColor = 'white';
-        document.getElementById('audio').style.color = 'black';
-        audio_btn.innerHTML = "Audio Off";
-        audio_btn.value = 'off';
 
 
 
 
+
+
+    });
+
+    video_btn.addEventListener('click', function(event) {
+        if (videoTracks[0].enabled) {
+            videoTracks[0].enabled = false;
+            document.getElementById('video').style.backgroundColor = 'white';
+            document.getElementById('video').style.color = 'black';
+            video_btn.innerHTML = "Video Off";
+            video_btn.value = 'off';
+
+        } else {
+            videoTracks[0].enabled = true;
+            document.getElementById('video').style.backgroundColor = '#F9A826';
+            document.getElementById('video').style.color = 'white';
+            video_btn.innerHTML = "Video On";
+            video_btn.value = 'on';
+
+        }
     });
 
 
@@ -146,8 +179,8 @@ function createOffered(username, channelName) {
         console.log("Connection Opend");
     }
 
-    var remoteAudio = createVideo(username);
-    setOnTrack(peer, remoteAudio);
+    var remoteVideo = createVideo(username);
+    setOnTrack(peer, remoteVideo);
 
     mapPeer[username] = [peer, dataChannel];
 
@@ -159,7 +192,7 @@ function createOffered(username, channelName) {
             if (iceConnectionState != 'closed') {
                 peer.close();
             }
-            removeAudio(remoteAudio);
+            removeVideo(remoteVideo);
         }
     });
     peer.addEventListener('icecandidate', (event) => {
@@ -185,6 +218,7 @@ function addLocalTracks(peer) {
         console.log("Adding localStream tracks");
         peer.addTrack(track, localStream);
     });
+
 }
 
 
@@ -196,31 +230,38 @@ function dataOnMessage(event) {
 }
 
 function createVideo(peerUsername) {
-    var audioContainer = document.querySelector('#audio-container');
-    var remoteAudio = document.createElement('audio');
-    remoteAudio.id = peerUsername + '-audio';
-    return remoteAudio;
+    var videoContainer = document.querySelector('#container');
+    var remoteVideo = document.createElement('video');
+    remoteVideo.id = peerUsername + '-video';
+    remoteVideo.autoplay = true;
+    remoteVideo.playsInline = true;
+    var videoWrapper = document.createElement('div');
+    videoContainer.appendChild(videoWrapper);
+    videoWrapper.appendChild(remoteVideo);
+    return remoteVideo;
 }
 
-function setOnTrack(peer, remoteAudio) {
+function setOnTrack(peer, remoteVideo) {
     var remoteStream = new MediaStream();
-    remoteAudio.scrObject = remoteStream;
+    remoteVideo.srcObject = remoteStream;
+    console.log(remoteStream);
     peer.addEventListener('track', async(event) => {
+
         remoteStream.addTrack(event.track, remoteStream);
     });
 }
 
-function removeAudio(remoteAudio) {
-    var audioWrapper = remoteAudio.parentNode;
-    audioWrapper.parentNode.removeChild(audioWrapper);
+function removeVideo(remoteVideo) {
+    var videoWrapper = remoteVideo.parentNode;
+    videoWrapper.parentNode.removeChild(videoWrapper);
 }
 
 function createAnswer(peer, peerUsername, channel_name) {
     var peer = new RTCPeerConnection(null);
     addLocalTracks(peer);
 
-    var remoteAudio = createVideo(peerUsername);
-    setOnTrack(peer, remoteAudio);
+    var remoteVideo = createVideo(peerUsername);
+    setOnTrack(peer, remoteVideo);
 
     peer.addEventListener('datachannel', e => {
         peer.dataChannel = e.channel;
@@ -243,7 +284,7 @@ function createAnswer(peer, peerUsername, channel_name) {
             if (iceConnectionState != 'closed') {
                 peer.close();
             }
-            removeAudio(remoteAudio);
+            removeVideo(remoteVideo);
         }
     });
     peer.addEventListener('icecandidate', (event) => {

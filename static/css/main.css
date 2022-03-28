@@ -90,24 +90,18 @@ body {
     height: 40px;
     width: 13%;
     position: relative;
-    border: none;
+    background-color: var(--primary);
+    color: white;
     border-radius: 5px;
-    border-color: white;
-    background-color: white;
     padding: 10px;
+    border: none;
     text-align: center;
+    cursor: pointer;
 }
 
 .audio-btn button:hover {
     border: 2px solid var(--primary);
     transition: none;
-    cursor: pointer;
-}
-
-.audio-btn button:active {
-    background-color: var(--primary);
-    transition: none;
-    color: white;
     cursor: pointer;
 }
 
@@ -130,7 +124,8 @@ body {
     grid-template-columns: 60% 20%;
 }
 
-video {
-    border-radius: 25%;
-    background-color: black;
+#container video {
+    border-radius: 5%;
+    max-height: 11rem;
+    background-color: transparent;
 }
