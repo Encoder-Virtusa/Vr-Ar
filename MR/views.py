@@ -23,7 +23,11 @@ def about(request):
 
 
 def vr(request):
-    context={}
+    
+    name = request.POST['userName']
+    
+    data = dumps({'name':name})
+    context={'Username':data}
     return render(request, 'library_last.html', context)
 
 def chat(request):
