@@ -213,3 +213,7 @@ input {
     display: flex;
     align-items: center;
 }
+
+.row button {
+    height: 2rem;
+}

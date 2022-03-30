@@ -15,7 +15,7 @@
     <div class="outer-box">
         <h3 class="heading" id="lable-username">USERNAME</h3>
         <div class="row">
-
+            <input type="text" id="username-input"><button id="login">Login</button>
 
             <div class="column">
                 <div class="audio-btn">
@@ -48,11 +48,7 @@
         </div>
     </div>
     <script rel="text/javascript" src="{% static 'js/main.js' %}"></script>
-    <script type="text/javascript">
-        data_from_django = JSON.parse("{{Username|escapejs}}");
-        console.log(data_from_django);
-        startTask(data_from_django['name']);
-    </script>
+
 </body>
 
 </html>

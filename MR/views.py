@@ -23,15 +23,10 @@ def about(request):
 
 
 def vr(request):
-    name = request.POST['userName'];
-    print(name)
-    dataJson = dumps({'name':name})
-    context = {'Username':dataJson}
+    context={}
     return render(request, 'library_last.html', context)
 
 def chat(request):
-    name = request.POST['userName'];
-    print(name)
-    dataJson = dumps({'name':name})
-    context = {'Username':dataJson}
+    
+    context={}
     return render(request, 'chat/chat.html', context)
