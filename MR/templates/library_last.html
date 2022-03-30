@@ -15,6 +15,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div style="position:relative;">
         <a-scene>
             <a-assets>
@@ -68,6 +69,25 @@
         console.log(data_from_django);
         startTask(data_from_django['name']);
     </script>
+=======
+    <a-scene>
+        <a-assets>
+
+            <img id="last" src="../templates/assets/360 img/library_last.jpg">
+            <img id="arrow" src="../templates/assets/icon/arrow.png">    
+            <img id="arrow-1" src="../templates/assets/icon/arrow.png">    
+           
+             
+        </a-assets>
+        <a-entity id="camera" camera mouse-cursor look-controls>
+            <a-cursor fuse="true" color="white"></a-cursor>
+        </a-entity>
+        <a-sky id="image-360" src="#last">
+            <a-entity id="arrow" geometry="height: 6; width: 6; skipCache: true" material="src: #arrow; transparent: true; emissiveIntensity: 0" position="47.66358 10.07183 -6.49348" rotation="3.09 220 -12.113" scale="-3.09 0.72 0.32" cursor-listener="" link="href: middle_library.html"></a-entity>
+            <a-entity id="arrow-1" geometry="height: 6; width: 6; skipCache: true" material="src: #arrow-1; transparent: true; emissiveIntensity: 0" position="-10.97023 4.31715 -28.14471" rotation="-356.43 366.58 -10" scale="-0.01 -1.87 -74.97" cursor-listener="" link="href: library_front.html"></a-entity>
+          </a-sky>
+    </a-scene>
+>>>>>>> 322d6b191e482f4a52131e1ef671826c9fae9e0a
 </body>
 
 </html>
