@@ -17,8 +17,14 @@
     <div style="position:relative;"></div>
     <a-scene>
         <a-assets>
+            <img id="front" src="../templates/assets/360 img/auditorium_front.jpg">
+            <img id="out" src="../templates/assets/icon/audtorium-out.png">
+    
+           
+             
 
             <img id="front" src="{% static 'assets/360 img/auditorium_front.jpg' %}">
+
 
 
 
@@ -27,6 +33,9 @@
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#front">
+            <a-entity id="out" geometry="height: 6; width: 6" material="src: #out; transparent: true; emissiveIntensity: 0" position="2.60825 7.29767 48.37303" rotation="0.03 -148.29 2.35" scale="1.64 1.84 -0.01" cursor-listener="" link="href: main-center.html"></a-entity>
+          </a-sky>
+=======
         </a-sky>
     </a-scene>
     <div class="main">

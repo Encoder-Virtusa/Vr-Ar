@@ -15,7 +15,11 @@
     <a-scene>
         <a-assets>
 
+
+            <img id="front" src="../templates/assets/360 img/conference_hall_front.jpg">
+            <img id="out" src="../templates/assets/icon/conferencehall_out.png">
             <img id="front" src="/static/360 img/conference_hall_front.jpg">
+
 
 
 
@@ -24,7 +28,11 @@
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#front">
+            <a-entity id="out" geometry="height: 6; width: 6" material="src: #out; transparent: true; emissiveIntensity: 0" position="25.11598 8.21067 23.68529" rotation="0 -142.77000000000004 0" scale="2.95 3.23 -0.01" cursor-listener="" link="href: waiting_hall.html"></a-entity>
+
+          </a-sky>
         </a-sky>
+
     </a-scene>
 </body>
 
