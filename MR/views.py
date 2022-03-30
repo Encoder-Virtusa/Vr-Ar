@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from json import dumps
 
 def login(request):
    
@@ -17,11 +17,21 @@ def tour(request):
     return render(request, 'page/tour.html', context)
 
 def about(request):
-    print(request.POST)
+    
     context = {}
     return render(request, 'page/about.html', context)
 
+
+def vr(request):
+    name = request.POST['userName'];
+    print(name)
+    dataJson = dumps({'name':name})
+    context = {'Username':dataJson}
+    return render(request, 'library_last.html', context)
+
 def chat(request):
-   
-    context = {}
+    name = request.POST['userName'];
+    print(name)
+    dataJson = dumps({'name':name})
+    context = {'Username':dataJson}
     return render(request, 'chat/chat.html', context)

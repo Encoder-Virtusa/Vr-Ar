@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -7,31 +8,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="../templates/css/main.css">
-    <script src="../templates/js/main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vr-main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
 </head>
 
 <body>
-    <a-scene>
-        <a-assets>
+    <div style="position:relative;">
+        <!-- <a-scene>
+            <a-assets>
 
-            <img id="outer" src="../templates/assets/360 img/library_outer.jpg">
-            <img id="arrow" src="../templates/assets/icon/arrow.png">    
-            <img id="arrow-1" src="../templates/assets/icon/arrow.png">    
-            <img id="arrow-2" src="../templates/assets/icon/arrow.png">    
+                <img id="outer" src="{% static '360 img/library_outer.jpg' %}">
+                <img id="arrow" src="{% static 'icon/arrow.png' %}">
+                <img id="arrow-1" src="{% static 'icon/arrow.png' %}">
+                <img id="arrow-2" src="{% static 'icon/arrow.png' %}">
 
-           
-             
-        </a-assets>
-        <a-entity id="camera" camera mouse-cursor look-controls>
-            <a-cursor fuse="true" color="white"></a-cursor>
-        </a-entity>
-        <a-sky id="image-360" src="#outer">
-            <a-entity id="arrow" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow ; transparent: true; emissiveIntensity: 0" position="-21.44273 2.6922 6.2821" rotation="-0.71 220.73 1.727" scale="-2.23 0.72 0.01" cursor-listener="" link="href: main-center.html"></a-entity>
-            <a-entity id="arrow-1" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow-1; transparent: true; emissiveIntensity: 0" position="5.89451 6.76943 -32.50433" rotation="0.99 344.68000000000006 0.787" scale="-2.08 0.72 -0.28" cursor-listener="" link="href: library_front.html"></a-entity>
-            <a-entity id="arrow-2" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow-2; transparent: true; emissiveIntensity: 0" position="-14.64244 4.16483 32.11311" rotation="-2.82 400 -10.253" scale="-3.14 0.72 -0.050" cursor-listener="" link="href: canteen.html"></a-entity>
-          </a-sky>
-    </a-scene>
+
+
+            </a-assets>
+            <a-entity id="camera" camera mouse-cursor look-controls>
+                <a-cursor fuse="true" color="white"></a-cursor>
+            </a-entity>
+            <a-sky id="image-360" src="#outer">
+                <a-entity id="arrow" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow ; transparent: true; emissiveIntensity: 0" position="-21.44273 2.6922 6.2821" rotation="-0.71 220.73 1.727" scale="-2.23 0.72 0.01" cursor-listener="" link="href: main-center.html"></a-entity>
+                <a-entity id="arrow-1" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow-1; transparent: true; emissiveIntensity: 0" position="5.89451 6.76943 -32.50433" rotation="0.99 344.68000000000006 0.787" scale="-2.08 0.72 -0.28" cursor-listener=""
+                    link="href: library_front.html"></a-entity>
+                <a-entity id="arrow-2" geometry="height: 6; width: 6; skipCache: true" material="src:#arrow-2; transparent: true; emissiveIntensity: 0" position="-14.64244 4.16483 32.11311" rotation="-2.82 400 -10.253" scale="-3.14 0.72 -0.050" cursor-listener="" link="href: canteen.html"></a-entity>
+            </a-sky>
+        </a-scene> -->
+        <div class="main">
+            <div class="body">
+                <div class="menu-body">
+                    <div id="menu-bars" class="fa-solid fa-bars"></div>
+                </div>
+                <div id="main-body" class="main-body-hide">
+                    <div class="user-space">
+                        <h3 class="heading" id="lable-username">USERNAME</h3>
+                    </div>
+                    <div class="column">
+
+                        <div id="chat">
+                            <div id="messages">
+                                <ul id="message-list">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="last-end">
+                            <div class="red-row">
+                                <input id="message-input" type="text" placeholder="Enter the message"><button class="log" id="send-message">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script type="text/javascript">
+        data_from_django = JSON.parse("{{Username|escapejs}}");
+        console.log(data_from_django);
+        startTask(data_from_django['name']);
+    </script>
 </body>
 
 </html>

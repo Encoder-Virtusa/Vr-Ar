@@ -2,30 +2,68 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="../templates/css/main.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vr-main.css' %}">
     <script src="../templates/js/main.js"></script>
 </head>
 
 <body>
+    <div style="position:relative;"></div>
     <a-scene>
         <a-assets>
 
-            <img id="front" src="../templates/assets/360 img/auditorium_front.jpg">
-    
-           
-             
+            <img id="front" src="{% static 'assets/360 img/auditorium_front.jpg' %}">
+
+
+
         </a-assets>
         <a-entity id="camera" camera mouse-cursor look-controls>
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#front">
-          </a-sky>
+        </a-sky>
     </a-scene>
+    <div class="main">
+        <div class="body">
+            <div class="menu-body">
+                <div id="menu-bars" class="fa-solid fa-bars"></div>
+            </div>
+            <div id="main-body" class="main-body-hide">
+                <div class="user-space">
+                    <h3 class="heading" id="lable-username">USERNAME</h3>
+                </div>
+                <div class="column">
+
+                    <div id="chat">
+                        <div id="messages">
+                            <ul id="message-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="last-end">
+                        <div class="red-row">
+                            <input id="message-input" type="text" placeholder="Enter the message"><button class="log" id="send-message">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script type="text/javascript">
+        data_from_django = JSON.parse("{{Username|escapejs}}");
+        console.log(data_from_django);
+        startTask(data_from_django['name']);
+    </script>
 </body>
 
 </html>

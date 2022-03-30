@@ -2,35 +2,72 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="../templates/css/main.css">
-    <script src="../templates/js/main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vr-main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </head>
 
 <body>
-    <a-scene>
-        <a-assets>
+    <div style="position:relative;">
+        <a-scene>
+            <a-assets>
+                <img id="entance-left" src="{% static '360 img/RECEPTION.jpg' %}">
+                <img id="exit" src="{% static 'icon/MAIN-CENTER.png' %}">
+                <img id="exit-1" src="{% static 'icon/RECEPTION-OUT.png' %}">
+            </a-assets>
+            <a-entity id="camera" camera mouse-cursor look-controls>
+                <a-cursor fuse="true" color="white"></a-cursor>
+            </a-entity>
 
-            <img id="entance-left" src="../templates/assets/360 img/RECEPTION.jpg">
-            <img id="exit" src="../templates/assets/icon/MAIN-CENTER.png">
-            <img id="exit-1" src="../templates/assets/icon/RECEPTION-OUT.png">
-            
-    
-          </a-assets>
-        <a-entity id="camera" camera mouse-cursor look-controls>
-            <a-cursor fuse="true" color="white"></a-cursor>
-        </a-entity>
-        <a-sky id="image-360" src="#entance-left">
-            <a-text font="aileronsemibold" value="Reception" width="6" position="2.18862 1.95423 3.90304" scale="-0.71 1.38 -6.55" rotation="-1.9100000000000001 -158.76 -0.51" text="width: 8; align: center; color: #ffffff; side: double" visible=""></a-text>
-            <a-text font="aileronsemibold" value="Entrance-Out" width="6" position="-1.87383 2.42407 -4.06594" scale="-0.76 1.26 -15.97" rotation="-1.9100000000000001 -339.21 -0.51" text="width: 10; align: center; color: #000000; side: double" visible=""></a-text>
-            <a-entity id="exit" geometry="height: 6; width: 6" material="src:#exit; transparent: true; emissiveIntensity: 0" position="11.06063 4.454 19.7846" rotation="-2.16259 -150 180.32" scale="-1.16 -1.17 -0.17" cursor-listener="" background="" link="href: main-center.html"></a-entity>
-            <a-entity id="exit-1" geometry="height: 6; width: 6" material="src:#exit-1; transparent: true; emissiveIntensity: 0" position="-3.80201 0.60327 -10.3774" rotation="-6.373000000000001 -155.09 180.32" scale="-1.16 -1.17 -0.17" cursor-listener="" background="" link="href: entrance.html"></a-entity>
-             </a-sky>
-    </a-scene>
+            <a-sky id="image-360" src="#entance-left">
+                <a-text font="aileronsemibold" value="Reception" width="6" position="2.18862 1.95423 3.90304" scale="-0.71 1.38 -6.55" rotation="-1.9100000000000001 -158.76 -0.51" text="width: 8; align: center; color: #ffffff; side: double" visible=""></a-text>
+                <a-text font="aileronsemibold" value="Entrance-Out" width="6" position="-1.87383 2.42407 -4.06594" scale="-0.76 1.26 -15.97" rotation="-1.9100000000000001 -339.21 -0.51" text="width: 10; align: center; color: #000000; side: double" visible=""></a-text>
+                <a-entity id="exit" geometry="height: 6; width: 6" material="src:#exit; transparent: true; emissiveIntensity: 0" position="11.06063 4.454 19.7846" rotation="-2.16259 -150 180.32" scale="-1.16 -1.17 -0.17" cursor-listener="" background="" link="href: main-center.html"></a-entity>
+                <a-entity id="exit-1" geometry="height: 6; width: 6" material="src:#exit-1; transparent: true; emissiveIntensity: 0" position="-3.80201 0.60327 -10.3774" rotation="-6.373000000000001 -155.09 180.32" scale="-1.16 -1.17 -0.17" cursor-listener="" background=""
+                    link="href: entrance.html"></a-entity>
+            </a-sky>
+        </a-scene>
+        <div class="main">
+            <div class="body">
+                <div class="menu-body">
+                    <div id="menu-bars" class="fa-solid fa-bars"></div>
+                </div>
+                <div id="main-body" class="main-body-hide">
+                    <div class="user-space">
+                        <h3 class="heading" id="lable-username">USERNAME</h3>
+                    </div>
+                    <div class="column">
+
+                        <div id="chat">
+                            <div id="messages">
+                                <ul id="message-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="last-end">
+                            <div class="red-row">
+                                <input id="message-input" type="text" placeholder="Enter the message"><button class="log" id="send-message">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script type="text/javascript">
+        data_from_django = JSON.parse("{{Username|escapejs}}");
+        console.log(data_from_django);
+        startTask(data_from_django['name']);
+    </script>
 </body>
 
 </html>

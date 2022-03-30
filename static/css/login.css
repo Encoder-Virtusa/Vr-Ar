@@ -214,3 +214,10 @@ input {
     text-transform: initial;
     font: 1.05rem;
 }
+
+.cust-txt {
+    color: white;
+    font-weight: 200;
+    font-size: 1em;
+    cursor: pointer;
+}

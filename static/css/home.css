@@ -100,11 +100,11 @@
         
         .centerArea .child a {
             width: 30%;
+            padding: 1%;
             cursor: pointer;
             display: flex;
             justify-content: center;
             border: 0px;
-            height: 16%;
             border-radius: 20px;
             background-color: rgba( 249, 168, 38, 0.8);
         }
