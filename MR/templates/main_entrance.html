@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="../templates/css/main.css">
-    <script src="../templates/js/main.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/vr-main.css">
+    <script src="/static/js/main.js"></script>
     <script id="link" type="text/html">
         <a-entity class="link" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: ${thumb}" event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1" event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
             proxy-event="event: click; to: #image-360; as: fade"></a-entity>
@@ -16,17 +17,14 @@
 </head>
 
 <body>
+    <div style="position:relative;">
     <a-scene>
         <a-assets>
 
-            <img id="entance" src="../templates/assets/360 img/ENTRANCE.jpg">
-            <img id="entrance-logo" src="../templates/assets/icon/ENTRANCE.png">
-            <img id="entrance-left" src="../templates/assets/icon/ENTRANCE-LEFT.png">
-            <img id="entrance-way-1" src="../templates/assets/icon/ENTRANCE-RIGHT-WAY-1.png">
-            <img id="library" src="../templates/assets/icon/library_icon.png">
-             <img id="conference" src="../templates/assets/icon/conferencehall_icon.png">
-             <img id="auditorium" src="../templates/assets/icon/auditorium_icon.png">
-
+            <img id="entance" src="/static/360 img/ENTRANCE.jpg">
+            <img id="entrance-logo" src="/static/icon/ENTRANCE.png">
+            <img id="entrance-left" src="/static/icon/ENTRANCE-LEFT.png">
+            <img id="entrance-way-1" src="/static/icon/ENTRANCE-RIGHT-WAY-1.png">
             <img id="entrance-1" src="/assets/360 img/ENTRANCE-1.jpg">
             
 
@@ -40,14 +38,28 @@
           
 <a-text font="aileronsemibold" value="Right-Entrance" width="6" position="3.54533 1.61611 4.56957" scale="-1.88 1.97 -0.94" rotation="-0.05 -141.25 -0.7500000000000001" text="width: 6.05; align: center; color: #ffffff; side: back" visible=""></a-text>
             <a-entity id="main-entance" geometry="height: 6; width: 6" material="src:#entrance-logo; transparent: true; emissiveIntensity: 0" position="-22.36205 -0.16473 15.86397" rotation="0 -46.8 0" scale="1 1 0.94" cursor-listener="" link="href: entrance-2.html"></a-entity>
-            <a-entity id="library" geometry="height: 6; width: 6" material="src: #library; transparent: true; emissiveIntensity: 0" position="-21.0365 7.22989 26.23111" rotation="0 -46.8 0" scale="0.42 0.44 0.1" cursor-listener="" link="href: library_outer.html"></a-entity>
-            <a-entity id="conference" geometry="height: 6; width: 6" material="src: #conference; transparent: true; emissiveIntensity: 0" position="-19.66346 3.4139 24.6509" rotation="0 -46.8 0" scale="0.56 0.44 0.1" cursor-listener="" link="href: conference_hall.html"></a-entity>
-            <a-entity id="auditorium" geometry="height: 6; width: 6" material="src: #auditorium; transparent: true; emissiveIntensity: 0" position="-20.07091 -0.57795 25.22063" rotation="0 -46.8 0" scale="0.55 0.66 0.04" cursor-listener="" link="href: auditorium_front.html"></a-entity>
-        
+           
           
             <a-entity id="entrance-way-1" geometry="height: 6; width: 6" material="src: #entrance-way-1; transparent: true; emissiveIntensity: 0" position="16.14807 3.22814 22.41545" rotation="0 40 0" scale="1 1 0.94" cursor-listener="" link="href: right-way-1.html"></a-entity>
         </a-sky>
     </a-scene>
+    <div class="left-entrance">
+        <div class="left-content">
+            <a href="auditorium_front.html" class="img-doc">
+                <img src="/static/icon/audtorium-in.png" alt="">
+                <p>Auditorium</p>
+            </a>
+            <a href="conferece_hall.html" class="img-doc">
+                <img src="/static/icon/conferencehall_in.png" alt="">
+                <p>Conference Hall</p>
+            </a>
+            <a href="library_front.html" class="img-doc">
+                <img src="/static/icon/libary.png" alt="">
+                <p>Libary</p>
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 
 
