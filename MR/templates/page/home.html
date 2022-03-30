@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+
+</head>
+
+<body>
+    <div class="bg">
+        {% include 'components/nav-bar.html' %}
+    </div>
+    <div class="centerArea">
+        <div class="child">
+            <div class="text">
+                Wellcome to the virtual world of <br><span>MVIT</span>
+            </div>
+            <a href="/login">
+                <div class="content">Enter into the world</div>
+
+
+            </a>
+
+        </div>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,21 @@
+{% with url_name=request.resolver_match.url_name %}
+<nav>
+    <div class="nav-left">
+        <a href="/"><img src="/static/img/icon.png" alt=""></a>
+    </div>
+    <div class="nav-right">
+        <div class="right-flex">
+            <a id="home" href="/">
+                <div class="{% if url_name == 'home' %} active {% endif %}">Home</div>
+            </a>
+            <a id="tour" href="/login">
+                <div class="{% if url_name == 'login' %} active {% endif %}">Virtual Tour</div>
+            </a>
+            <a id="about" href="/about">
+                <div class="{% if url_name == 'about' %} active {% endif %}">About Us</div>
+            </a>
+        </div>
+    </div>
+</nav>
+
+{% endwith %}

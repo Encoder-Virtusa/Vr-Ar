@@ -15,9 +15,34 @@
     transition: all .2s linear;
 }
 
-html,
-body {
-    height: 100%;
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 html {
@@ -34,11 +59,63 @@ body {
 
 .outer-box {
     min-width: 800px;
+    display: inline-flex;
     max-width: 1000px;
     max-height: 800px;
     height: 95vh;
     background: #FFF;
     border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.outer-box .heading {
+    padding: 2rem;
+}
+
+.outer-box .row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    width: 24rem;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-transform: capitalize;
+    height: 30%;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+}
+
+.last-end input {
+    height: 2rem;
+    width: 21rem;
+}
+
+.log {
+    margin: 5px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 300;
+    color: var(--primary);
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+.outer-box .column {
+    display: flex;
+    width: 19rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .container {
@@ -85,7 +162,6 @@ body {
 }
 
 .audio-btn {
-    height: 40px;
     display: flex;
     justify-content: right;
 }
@@ -93,26 +169,18 @@ body {
 .audio-btn button {
     margin: 5px;
     height: 40px;
-    width: 13%;
-    position: relative;
-    border: none;
+    background-color: var(--primary);
+    color: white;
     border-radius: 5px;
-    border-color: white;
-    background-color: white;
     padding: 10px;
+    border: none;
     text-align: center;
+    cursor: pointer;
 }
 
 .audio-btn button:hover {
     border: 2px solid var(--primary);
     transition: none;
-    cursor: pointer;
-}
-
-.audio-btn button:active {
-    background-color: var(--primary);
-    transition: none;
-    color: white;
     cursor: pointer;
 }
 
@@ -135,7 +203,17 @@ body {
     grid-template-columns: 60% 20%;
 }
 
-video {
-    border-radius: 25%;
+#container video {
+    border-radius: 5%;
+    max-height: 11rem;
     background-color: black;
+}
+
+.red-row {
+    display: flex;
+    align-items: center;
+}
+
+.row button {
+    height: 2rem;
 }

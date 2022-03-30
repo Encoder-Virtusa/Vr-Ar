@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.1.1-web/css/all.css'%}">
+
+    <script src="{% static 'js/all.js'%}"></script>
+</head>
+
+<body style="background-image: none;">
+    <div>
+        {% include 'components/nav-bar.html' %}
+    </div>
+
+    <div class="row-container">
+        <div class="left-row"></div>
+        <div class="right-row">
+            <div class="column-text">None of us is as smart as <br><span>All of us</span></div>
+
+            <div class="main-text">
+                Welcome to MIT virtual campus tour, your number one source with a amazing and awesome new features. We're dedicated to giving you the very best of virtual tour, with a focus on creating the best virtual ambient with live meetings, coffee time and live
+                chat with the professional people in this campus which gives you the best feel. <span class="brmedium"></span> Founded in 2022 by our founders, has come to visit and admire your virtual campus. This can offer you "the world's
+                most advanced Online campus". We now serve customers all over the world and are thrilled that we're able to turn our passion into our own website.
+            </div>
+
+            <div class="small-box">
+                <div class="column"><img src="{% static 'svg/img.svg'%}" alt=""> <br>
+                    <div class="text"><span>Thirumurugan C</span> <br> VR Developer, AR Integrator Django(WEBRTC)
+                    </div>
+                </div>
+                <div class="column"><img src="{% static 'svg/img.svg'%}" alt=""> <br>
+                    <div class="text"><span>Sowmya Deborah J</span> <br> VR Developer, AR Modeling </div>
+                </div>
+                <div class="column"><img src="{% static 'svg/img.svg'%}" alt=""> <br>
+                    <div class="text"><span>Sahana Ashok</span> <br> VR Developer, AR Integrator Django(WEBRTC)
+                    </div>
+                </div>
+                <div class="column"><img src="{% static 'svg/img.svg'%}" alt=""> <br>
+                    <div class="text"> <span>Megha G</span> <br> WEB Developer, VR Developer</div>
+                </div>
+                <div class="column"><img src="{% static 'svg/img.svg'%}" alt=""> <br>
+                    <div class="text"><span>Nithish Kumar S</span> <br> WEB Developer, VR Developer</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

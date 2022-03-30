@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBRTC</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+
+</head>
+
+<body>
+    <div class="outer-box">
+        <h3 class="heading" id="lable-username">USERNAME</h3>
+        <div class="row">
+            <input type="text" id="username-input"><button id="login">Login</button>
+
+            <div class="column">
+                <div class="audio-btn">
+                    <button value='off' id="audio" type="button">Audio On</button>
+                </div>
+                <div class="audio-btn">
+                    <button value='off' id="video" type="button">Video On</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="last-end">
+                    <div class="red-row">
+                        <input id="message-input" type="text"><button class="log" id="send-message">Send</button>
+                    </div>
+
+                </div>
+                <div id="chat">
+                    <div id="messages">
+                        <ul id="message-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="container">
+                <div>
+                    <video id="localVideo" autoplay muted playsinline></video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script rel="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
