@@ -16,6 +16,8 @@
         <a-assets>
 
             <img id="waiting_hall" src="../templates/assets/360 img/waiting_hall.jpg">
+            <img id="out" src="../templates/assets/icon/waitingroom-out.png">
+            <img id="conference-in" src="../templates/assets/icon/conferencehall_in.png">
     
            
              
@@ -24,6 +26,8 @@
             <a-cursor fuse="true" color="white"></a-cursor>
         </a-entity>
         <a-sky id="image-360" src="#waiting_hall">
+            <a-entity id="out" geometry="height: 6; width: 6" material="src: #out; transparent: true; emissiveIntensity: 0" position="23.51558 15.31904 -32.12257" rotation="0 -46.8 0" scale="2.69 2.9 0.1" cursor-listener="" link="href: waiting_hall_way.html"></a-entity>
+            <a-entity id="conference-in" geometry="height: 6; width: 6" material="src: #conference-in; transparent: true; emissiveIntensity: 0" position="8.08331 12.66568 35.18346" rotation="-9.47 -32.44 9.24" scale="2.5 2.02 0.00001" cursor-listener="" link="href: conferece_hall.html"></a-entity>
           </a-sky>
     </a-scene>
 </body>
